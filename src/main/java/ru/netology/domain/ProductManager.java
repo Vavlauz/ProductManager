@@ -34,7 +34,7 @@ public class ProductManager {
 //        // return product.getName().contains(search);
 //    }
 
-        public boolean matches(Product product, String search) {
+        public boolean matches(Product product,String search) {
             if (product.matches(search)) {
             return true;
         } else {

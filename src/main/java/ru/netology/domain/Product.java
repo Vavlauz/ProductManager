@@ -1,5 +1,7 @@
 package ru.netology.domain;
 
+import java.util.Objects;
+
 public class Product {
     private int id;
     private String name;
@@ -16,12 +18,18 @@ public class Product {
     }
 
     public boolean matches(String search) {
+        if (this.equals(search)) return true;
+        if (search == null || !getClass().equals(search.getClass())) return false;
         Product product = new Product();
-        if (product.getName().contains(search)) {
-            return true;
-        } else {
-            return false;
-        }
+        return id == product.id && price == product.price && Objects.equals(name, product.name);
+//        Product product = new Product();
+//        if (product.getName().contains(search)) {
+//            return true;
+//        } else {
+//            return false;
+//        }
+
+
     }
 
 
