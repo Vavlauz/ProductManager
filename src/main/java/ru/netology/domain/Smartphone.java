@@ -20,4 +20,12 @@ public class Smartphone extends Product {
     public void setProductName(String productName) {
         this.productName = productName;
     }
+
+    @Override
+    public boolean matches(String search) {
+        if (super.matches(search)) { // вызов метода matches в версии описанной в Product
+            return true;
+        }
+        return false;
+    }
 }

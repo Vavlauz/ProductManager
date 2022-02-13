@@ -15,6 +15,16 @@ public class Product {
 
     }
 
+    public boolean matches(String search) {
+        Product product = new Product();
+        if (product.getName().contains(search)) {
+            return true;
+        } else {
+            return false;
+        }
+    }
+
+
     public int getId() {
         return id;
     }
@@ -38,4 +48,7 @@ public class Product {
     public void setPrice(int price) {
         this.price = price;
     }
+
+
+
 }
