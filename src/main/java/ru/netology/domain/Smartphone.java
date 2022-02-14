@@ -1,9 +1,6 @@
 package ru.netology.domain;
 
-import java.util.Objects;
-
 public class Smartphone extends Product {
-    //    private String name;
     private String productName;
 
     public Smartphone() {
@@ -25,9 +22,12 @@ public class Smartphone extends Product {
 
     @Override
     public boolean matches(String search) {
-        if (super.matches(search)) return true;
-        if (search == null || !getClass().equals(search.getClass())) return false;
-        Smartphone smartphone = new Smartphone(getId(), getName(), getPrice(), productName);
-        return Objects.equals(productName, smartphone.productName);
+            if (super.matches(search)) {
+                return true;
+            }
+            if (this.getProductName().contains(search)) {
+                return true;
+            }
+        return false;
     }
 }

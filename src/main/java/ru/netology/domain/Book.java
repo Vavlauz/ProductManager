@@ -2,7 +2,6 @@ package ru.netology.domain;
 
 public class Book extends Product {
     private String author;
-//    private String name;
 
     public Book() {
         super();
@@ -30,6 +29,7 @@ public class Book extends Product {
                 return true;
             }
 
+        return false;
     }
 //        if (super.matches(search)) return true;
 //        if (search == null || !getClass().equals(search.getClass())) return false;
