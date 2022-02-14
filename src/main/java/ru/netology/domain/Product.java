@@ -14,14 +14,13 @@ public class Product {
     public Product() {
 
     }
+
     public boolean matches(String search) {
         if (this.getName().contains(search)) {
             return true;
         } else {
             return false;
         }
-
-
     }
 
 
