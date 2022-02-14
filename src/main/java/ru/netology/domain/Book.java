@@ -26,7 +26,7 @@ public class Book extends Product {
             if (super.matches(search)) {
                 return true;
             }
-            if (this.matches(getAuthor())) {
+            if (this.getAuthor().contains(search)) {
                 return true;
             }
 
