@@ -1,23 +1,22 @@
 package ru.netology.domain;
 
 public class Smartphone extends Product {
-//    private String name;
-    private String productName;
+    private String manufacturer;
 
     public Smartphone() {
         super();
     }
 
-    public Smartphone(int id, String name, int price, String productName) {
+    public Smartphone(int id, String name, int price, String manufacturer) {
         super(id, name, price);
-        this.productName = productName;
+        this.manufacturer = manufacturer;
     }
 
-    public String getProductName() {
-        return productName;
+    public String getManufacturer() {
+        return manufacturer;
     }
 
-    public void setProductName(String productName) {
-        this.productName = productName;
+    public void setManufacturer(String manufacturer) {
+        this.manufacturer = manufacturer;
     }
 }
