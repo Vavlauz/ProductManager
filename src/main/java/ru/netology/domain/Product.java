@@ -15,10 +15,6 @@ public class Product {
 
     }
     public boolean matches(String search) {
-//        if (this.equals(search)) return true;
-//        if (search == null || !getClass().equals(search.getClass())) return false;
-//        Product product = new Product(id,name,price);
-//        return id == product.id && price == product.price && Objects.equals(name, product.name);
         if (this.getName().contains(search)) {
             return true;
         } else {

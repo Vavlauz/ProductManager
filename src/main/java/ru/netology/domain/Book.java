@@ -25,9 +25,16 @@ public class Book extends Product {
 
     @Override
     public boolean matches(String search) {
-        if (super.matches(search)) return true;
-        if (search == null || !getClass().equals(search.getClass())) return false;
-        Book book = new Book(getId(), getName(), getPrice(), author);
-        return Objects.equals(author, book.author);
-    }
+            if (super.matches(search)) {
+                return true;
+            }
+            if (super.matches(getAuthor()) {
+                return true;
+            }
+        }
+//        if (super.matches(search)) return true;
+//        if (search == null || !getClass().equals(search.getClass())) return false;
+//        Book book = new Book(getId(), getName(), getPrice(), author);
+//        return Objects.equals(author, book.author);
+//    }
 }
