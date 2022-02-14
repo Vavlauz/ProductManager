@@ -16,18 +16,18 @@ public class Product {
     public Product() {
 
     }
-
+    @Override
     public boolean matches(String search) {
-        if (this.equals(search)) return true;
-        if (search == null || !getClass().equals(search.getClass())) return false;
-        Product product = new Product();
-        return id == product.id && price == product.price && Objects.equals(name, product.name);
-//        Product product = new Product();
-//        if (product.getName().contains(search)) {
-//            return true;
-//        } else {
-//            return false;
-//        }
+//        if (this.equals(search)) return true;
+//        if (search == null || !getClass().equals(search.getClass())) return false;
+//        Product product = new Product(id,name,price);
+//        return id == product.id && price == product.price && Objects.equals(name, product.name);
+        Product product = new Product(id,name,price);
+        if (product.getName().contains(search)) {
+            return true;
+        } else {
+            return false;
+        }
 
 
     }

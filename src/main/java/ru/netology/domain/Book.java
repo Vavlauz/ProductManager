@@ -1,10 +1,12 @@
 package ru.netology.domain;
 
+import java.util.Objects;
+
 public class Book extends Product {
     private String author;
 //    private String name;
 
-    public Book(){
+    public Book() {
         super();
     }
 
@@ -23,9 +25,9 @@ public class Book extends Product {
 
     @Override
     public boolean matches(String search) {
-        if (super.matches(search)) { // вызов метода matches в версии описанной в Product
-            return true;
-        }
-        return false;
+        if (super.matches(search)) return true;
+        if (search == null || !getClass().equals(search.getClass())) return false;
+        Book book = new Book(getId(), getName(), getPrice(), author);
+        return Objects.equals(author, book.author);
     }
 }
