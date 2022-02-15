@@ -1,6 +1,5 @@
 package ru.netology.manager;
 
-import ru.netology.domain.Book;
 import ru.netology.domain.Product;
 import ru.netology.repository.ProductRepository;
 
@@ -18,7 +17,7 @@ public class ProductManager {
     public Product[] searchBy(String text) {
         Product[] result = new Product[0]; // тут будем хранить подошедшие запросу продукты
         for (Product product : repository.findAll()) {
-            if (matches(product, text)) {
+            if (product.matches(text)) {
                 return new Product[]{product};// "добавляем в конец" массива result продукт product
             }
         }
@@ -34,16 +33,6 @@ public class ProductManager {
 //        // или в одну строку:
 //        // return product.getName().contains(search);
 //    }
-
-    public boolean matches(Product product, String search) {
-        if (Book.matches(search)) {
-            return true;
-        } else {
-            return false;
-        }
-        // или в одну строку:
-        // return product.getName().contains(search);
-    }
 
     public Product[] findAllProducts() {
         return repository.findAll();
