@@ -1,5 +1,6 @@
-package ru.netology.domain;
+package ru.netology.manager;
 
+import ru.netology.domain.Product;
 import ru.netology.repository.ProductRepository;
 
 public class ProductManager {
@@ -39,7 +40,7 @@ public class ProductManager {
     }
 
     public Product[] removeByIdProducts(int id) {
-         return repository.removeById(id);
+        return repository.removeById(id);
     }
 
 }
