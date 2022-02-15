@@ -1,5 +1,7 @@
-package ru.netology.domain;
+package ru.netology.manager;
 
+import ru.netology.domain.Book;
+import ru.netology.domain.Product;
 import ru.netology.repository.ProductRepository;
 
 public class ProductManager {
@@ -23,8 +25,18 @@ public class ProductManager {
         return result;
     }
 
-        public boolean matches(Product product,String search) {
-            if (product.matches(search)) {
+//        public boolean matches(Product product,String search) {
+//            if (product.matches(search)) {
+//            return true;
+//        } else {
+//            return false;
+//        }
+//        // или в одну строку:
+//        // return product.getName().contains(search);
+//    }
+
+    public boolean matches(Product product, String search) {
+        if (Book.matches(search)) {
             return true;
         } else {
             return false;
@@ -38,7 +50,7 @@ public class ProductManager {
     }
 
     public Product[] removeByIdProducts(int id) {
-         return repository.removeById(id);
+        return repository.removeById(id);
     }
 
 }

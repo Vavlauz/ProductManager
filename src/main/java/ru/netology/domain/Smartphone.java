@@ -22,12 +22,12 @@ public class Smartphone extends Product {
 
     @Override
     public boolean matches(String search) {
-            if (super.matches(search)) {
-                return true;
-            }
-            if (this.getManufacturer().contains(search)) {
-                return true;
-            }
+        if (super.matches(search)) {
+            return true;
+        }
+        if (this.getManufacturer().contains(search)) {
+            return true;
+        }
         return false;
     }
 }
