@@ -137,7 +137,7 @@ class ProductManagerTest {
         manager.saveProduct(oneX);
         manager.saveProduct(blackFang);
 
-        Product[] expected = new Product[]{blackFang, whiteFang};
+        Product[] expected = new Product[]{coreJava, whiteFang};
         Product[] actual = manager.searchBy("first");
 
         assertArrayEquals(expected, actual);
