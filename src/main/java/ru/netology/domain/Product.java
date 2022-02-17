@@ -16,11 +16,12 @@ public class Product {
     }
 
     public boolean matches(String search) {
-        if (this.getName().contains(search)) {
-            return true;
-        } else {
-            return false;
-        }
+        return name.contains(search);
+//        if (this.getName().contains(search)) {
+//            return true;
+//        } else {
+//            return false;
+//        }
     }
 
 
