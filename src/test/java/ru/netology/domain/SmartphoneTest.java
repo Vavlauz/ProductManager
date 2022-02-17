@@ -13,4 +13,10 @@ class SmartphoneTest {
 
         assertTrue(first.matches("core"));
     }
+
+    @Test
+    void matches2() {
+
+        assertFalse(second.matches("core"));
+    }
 }

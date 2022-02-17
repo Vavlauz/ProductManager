@@ -2,6 +2,7 @@ package ru.netology.domain;
 
 import org.junit.jupiter.api.Test;
 
+import static org.junit.jupiter.api.Assertions.assertFalse;
 import static org.junit.jupiter.api.Assertions.assertTrue;
 
 class ProductTest {
@@ -12,6 +13,12 @@ class ProductTest {
     void matches() {
 
         assertTrue(first.matches("core"));
+    }
+
+    @Test
+    void matches2() {
+
+        assertFalse(second.matches("core"));
     }
 
 }
