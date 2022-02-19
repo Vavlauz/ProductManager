@@ -19,4 +19,16 @@ class SmartphoneTest {
 
         assertFalse(second.matches("core"));
     }
+
+    @Test
+    void matches3() {
+
+        assertFalse(first.matches("anyBodyHere"));
+    }
+
+    @Test
+    void matches4() {
+
+        assertTrue(first.matches("anyBody"));
+    }
 }

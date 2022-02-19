@@ -19,4 +19,16 @@ class BookTest {
 
         assertFalse(second.matches("core"));
     }
+
+    @Test
+    void matches3() {
+
+        assertFalse(second.matches("anyBodyHere"));
+    }
+
+    @Test
+    void matches4() {
+
+        assertTrue(first.matches("anyBody"));
+    }
 }
