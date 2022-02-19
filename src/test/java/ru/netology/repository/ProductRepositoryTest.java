@@ -5,6 +5,7 @@ import org.junit.jupiter.api.Test;
 import ru.netology.domain.Book;
 import ru.netology.domain.Product;
 import ru.netology.domain.Smartphone;
+import ru.netology.exception.AlreadyExistsException;
 import ru.netology.exception.NotFoundException;
 
 import static org.junit.jupiter.api.Assertions.assertArrayEquals;
@@ -15,6 +16,8 @@ class ProductRepositoryTest {
     private Book whiteFang = new Book(2, "fang", 300, "first");
     private Book blackFang = new Book(3, "fang", 550, "three");
     private Smartphone oneX = new Smartphone(4, "one", 5000, "phone1");
+    private Smartphone oneXX = new Smartphone(4, "oneXX", 6000, "phone2");
+
 
     @Test
     void removeByIdAll() throws NotFoundException {
@@ -65,11 +68,29 @@ class ProductRepositoryTest {
     }
 
     @Test
-    void saveByIdOneProd() {
+    void save() {
+        repo.save(coreJava);
         repo.save(whiteFang);
+        repo.save(blackFang);
+        repo.save(oneX);
 
         Product[] actual = repo.findAll();
-        Product[] expected = {whiteFang};
+        Product[] expected = {coreJava, whiteFang, blackFang, oneX};
+
+        assertArrayEquals(expected, actual);
+    }
+
+    @Test
+    void saveAlreadyExistsException() {
+        repo.save(coreJava);
+        repo.save(whiteFang);
+        repo.save(blackFang);
+        repo.save(oneX);
+
+        Assertions.assertThrows(AlreadyExistsException.class, () -> repo.save(oneXX));
+
+        Product[] actual = repo.findAll();
+        Product[] expected = {coreJava, whiteFang, blackFang, oneX};
 
         assertArrayEquals(expected, actual);
     }
