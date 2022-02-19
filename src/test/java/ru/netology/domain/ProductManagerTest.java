@@ -11,7 +11,7 @@ class ProductManagerTest {
     private Book coreJava = new Book(1, "core", 200, "first");
     private Book whiteFang = new Book(2, "fang", 300, "first");
     private Book blackFang = new Book(3, "fang", 550, "three");
-    private Smartphone oneX = new Smartphone(1, "one", 5000, "phone1");
+    private Smartphone oneX = new Smartphone(4, "one", 5000, "phone1");
 
     @Test
     void shouldSaveOneItem() {
@@ -173,13 +173,11 @@ class ProductManagerTest {
 
     @Test
     void shouldSaveTwoItems() {
-        Book coreJava = new Book();
-        Smartphone OneX = new Smartphone();
 
         manager.saveProduct(coreJava);
-        manager.saveProduct(OneX);
+        manager.saveProduct(oneX);
 
-        Product[] expected = new Product[]{coreJava, OneX};
+        Product[] expected = new Product[]{coreJava, oneX};
         Product[] actual = manager.findAllProducts();
 
         assertArrayEquals(expected, actual);
