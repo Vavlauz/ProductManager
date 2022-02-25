@@ -13,29 +13,14 @@ public class ProductRepository {
                 throw new AlreadyExistsException("Element with id: " + item.getId() + " already exists");
             }
 
-            }
+        }
         int length = items.length + 1;
         Product[] tmp = new Product[length];
         System.arraycopy(items, 0, tmp, 0, items.length);
         int lastIndex = tmp.length - 1;
         tmp[lastIndex] = item;
         items = tmp;
-        }
-//        int result = items.length + 1;
-//        Product[] tmp = new Product[result];
-//        for (int i = 0; i < items.length; i++) {
-//            tmp[i] = items[i];
-//        }
-//        tmp[tmp.length - 1] = item;
-//        items = tmp;
-
-//    }
-//        int length = items.length + 1;
-//        Product[] tmp = new Product[length];
-//        System.arraycopy(items, 0, tmp, 0, items.length);
-//                int lastIndex = tmp.length - 1;
-//                tmp[lastIndex] = item;
-//                items = tmp;
+    }
 
     public Product[] findAll() {
         return items;

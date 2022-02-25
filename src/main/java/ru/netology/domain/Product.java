@@ -17,13 +17,7 @@ public class Product {
 
     public boolean matches(String search) {
         return name.contains(search);
-//        if (this.getName().contains(search)) {
-//            return true;
-//        } else {
-//            return false;
-//        }
     }
-
 
     public int getId() {
         return id;

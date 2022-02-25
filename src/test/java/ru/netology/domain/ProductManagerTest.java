@@ -189,10 +189,6 @@ class ProductManagerTest {
         Book WhiteFang = new Book();
         Smartphone OneX = new Smartphone();
 
-//        manager.saveProduct(coreJava);
-//        manager.saveProduct(WhiteFang);
-//        manager.saveProduct(OneX);
-
         Product[] expected = new Product[]{};
         Product[] actual = manager.findAllProducts();
 

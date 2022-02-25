@@ -29,17 +29,6 @@ public class ProductManager {
         return result;
     }
 
-
-//        public boolean matches(Product product,String search) {
-//            if (product.matches(search)) {
-//            return true;
-//        } else {
-//            return false;
-//        }
-//        // или в одну строку:
-//        // return product.getName().contains(search);
-//    }
-
     public Product[] findAllProducts() {
         return repository.findAll();
     }
@@ -47,5 +36,4 @@ public class ProductManager {
     public Product[] removeByIdProducts(int id) {
         return repository.removeById(id);
     }
-
 }
