@@ -31,9 +31,4 @@ public class Book extends Product {
 
         return false;
     }
-//        if (super.matches(search)) return true;
-//        if (search == null || !getClass().equals(search.getClass())) return false;
-//        Book book = new Book(getId(), getName(), getPrice(), author);
-//        return Objects.equals(author, book.author);
-//    }
 }
